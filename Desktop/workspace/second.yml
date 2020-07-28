@@ -24,26 +24,6 @@ Mappings:
       instanceType: t2.micro
     prod:
       instanceType: t2.small            
-Conditions:
-  CreateEIPForProd: !Equals [!Ref EnvironmentName, dev]
-  CreateDevSecurityGroup: !Equals [!Ref EnvironmentName, prod]
-
-Resources:
-  MyVMInstance:
-    Type: AWS::EC2::Instance
-    Properties:
-      ImageId: !FindInMap
-        - MyRegionMap
-        - !Ref 'AWS::Region'
-        - HVM64
-      InstanceType: !FindInMap
-        - MyEnvironmentMap
-        - !Ref EnvironmentName
-        - instanceType
-
-      KeyName: !Ref MyKeyName
-  MyProdEIP:
-    Type: AWS::EC2::EIP
-    Condition: CreateEIPForProd
+234
     Properties:
       InstanceId: !Ref MyVMInstance
