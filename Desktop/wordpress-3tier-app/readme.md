@@ -1,6 +1,6 @@
 # Terraform WordPress deployment
 ## Description:
-This TF script will deploy a single region highly available WordPress site with RDS, EC2 and VPC into Stratoscale Symphony. 
+This TF script will deploy a single region highly available WordPress site with RDS, EC2 and VPC into AWS account
 
 ### Networks to be provisioned:
 - 1 VPC 
